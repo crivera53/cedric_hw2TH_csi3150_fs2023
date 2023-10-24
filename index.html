@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stacked Rectangles</title>
+    <style>
+        .outer-rectangle {
+            width: 1200px; /* Adjust the width of the outer rectangle as needed */
+            height: 500px; /* Adjust the height of the outer rectangle as needed */
+            border: 2px solid rgb(255, 151, 33); /* Border size and color for the outer rectangle */
+            position: relative; /* Position relative for proper placement of the inner rectangles */
+        }
+
+        .inner-rectangle {
+            width: 99%; /* Set the width to 100% to match the width of the outer rectangle */
+            height: 50px; /* Adjust the height of the inner rectangles as needed */
+            border: 2px solid rgb(255, 151, 33); /* Border size and color for the inner rectangles */
+            position: absolute; /* Position absolute for precise placement within the outer rectangle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .inner-rectangleb {
+            width: 160px; /* Adjust the width to make the rectangles square */
+            height: 60px; /* Adjust the height to make the rectangles square */
+            border: 2px solid rgb(255, 151, 33); /* Border size and color for the inner rectangles */
+            position: absolute; /* Position absolute for precise placement within the outer rectangle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .inner-rectangle1 {
+            top: 2px; /* Position at the top of the outer rectangle */
+        }
+
+        .inner-rectangle2 {
+            top: 60px; /* Position below the first inner rectangle */
+        }
+
+        .inner-rectangle3 {
+            top: 410px; /* Position at the bottom of the outer rectangle */
+            left: 100px; /* Position at the left */
+        }
+
+        .inner-rectangle4 {
+            top: 410px; /* Position at the bottom of the outer rectangle (same as inner-rectangle3) */
+            left: 530px; /* Position to the right of the inner-rectangle3 */
+        }
+
+        .inner-rectangle5 {
+            top: 410px; /* Position at the bottom of the outer rectangle (same as inner-rectangle3) */
+            left: 930px; /* Position to the right of inner-rectangle4 */
+        }
+
+        .inner-rectangleb:hover {
+            background-color: rgb(255, 151, 33);
+            color: white;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 120px;
+            left: 60px;
+            display: none; /* Hide the image container by default */
+        }
+
+        .image-containerb {
+            position: absolute;
+            top: 120px;
+            left: 485px;
+            display: none; /* Hide the image container by default */
+        }
+
+        .image-containerc {
+            position: absolute;
+            top: 120px;
+            right: -128px;
+            display: none; /* Hide the image container by default */
+        }
+
+        .image-container img {
+            max-width: 55%;
+            max-height: 55%;
+        }
+
+        .image-containerb img {
+            max-width: 55%;
+            max-height: 55%;
+        }
+
+        .image-containerc img {
+            max-width: 55%;
+            max-height: 55%;
+        }
+        
+        .hide-button {
+            width: 55%;
+            background-color: rgb(0, 128, 255);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer-rectangle">
+        <div class="inner-rectangle inner-rectangle1">Welcome to the interactive ABC's of CSS Technology learning Website</div>
+        <div class="inner-rectangle inner-rectangle2">Click on the buttons below to reveal and learn the CSS technology features of the corresponding letters</div>
+        <!-- New inner rectangles for the bottom part -->
+        <div class="inner-rectangleb inner-rectangle3" id="buttonA">A</div>
+        <div class="inner-rectangleb inner-rectangle4" id="buttonB">B</div>
+        <div class="inner-rectangleb inner-rectangle5" id="buttonC">C</div>
+        <!-- Image container to show/hide when A is clicked -->
+        <div class="image-container" id="imageContainerA">
+            <img src="css-letter-a.png" alt="Image A">
+            <button id="hideButtonA" class="hide-button">Hide Result</button>
+        </div>
+        <div class="image-containerb" id="imageContainerB">
+            <img src="css-letter-b.png" alt="Image B">
+            <button id="hideButtonB" class="hide-button">Hide Result</button>
+        </div>
+        <div class="image-containerc" id="imageContainerC">
+            <img src="css-letter-c.png" alt="Image C">
+            <button id="hideButtonC" class="hide-button">Hide Result</button>
+        </div>
+    </div>
+
+    <script>
+        const buttonA = document.getElementById("buttonA");
+        const imageContainerA = document.getElementById("imageContainerA");
+        const hideButtonA = document.getElementById("hideButtonA");
+
+        buttonA.addEventListener("click", () => {
+            imageContainerA.style.display = "block";
+        });
+
+        hideButtonA.addEventListener("click", () => {
+            imageContainerA.style.display = "none";
+        });
+
+        const buttonB = document.getElementById("buttonB");
+        const imageContainerB = document.getElementById("imageContainerB");
+        const hideButtonB = document.getElementById("hideButtonB");
+
+        buttonB.addEventListener("click", () => {
+            imageContainerB.style.display = "block";
+        });
+
+        hideButtonB.addEventListener("click", () => {
+            imageContainerB.style.display = "none";
+        });
+
+        const buttonC = document.getElementById("buttonC");
+        const imageContainerC = document.getElementById("imageContainerC");
+        const hideButtonC = document.getElementById("hideButtonC");
+
+        buttonC.addEventListener("click", () => {
+            imageContainerC.style.display = "block";
+        });
+
+        hideButtonC.addEventListener("click", () => {
+            imageContainerC.style.display = "none";
+        });
+    </script>
+</body>
+</html>
